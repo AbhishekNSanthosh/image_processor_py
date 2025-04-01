@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .image-box {
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Image Processing Output</h1>
+        
+        <!-- Display Image Size & Shape -->
+        <div class="info">
+            <p>Image Dimensions: {{ dimensions }}</p>
+            <p>Number of Channels: {{ channels }}</p>
+        </div>
+
+        <!-- Grid Layout -->
+        <div class="grid">
+            <div class="image-box">
+                <h2>Original Image</h2>
+                <img src="{{ images['input'] }}">
+            </div>
+
+            <div class="image-box">
+                <h2>Grayscale Image</h2>
+                <img src="{{ images['gray'] }}">
+            </div>
+
+            <div class="image-box">
+                <h2>Binary Image</h2>
+                <img src="{{ images['binary'] }}">
+            </div>
+
+            <div class="image-box">
+                <h2>Scaled Image</h2>
+                <img src="{{ images['scaled'] }}">
+            </div>
+
+            <div class="image-box">
+                <h2>Denoised Image</h2>
+                <img src="{{ images['denoised'] }}">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
